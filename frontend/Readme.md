@@ -1,12 +1,12 @@
 ![](https://komarev.com/ghpvc/?username=hamitmizrak)
 
-![readme](./picture/readme.png)
+![readme](./picture/pages.png)
 
-# Turkcell Java Full Stack 12 Ağustos2022
-* [GitHub](https://https://https://github.com/hamitmizrak/Turkcell_FullStackDevelopment_Frontend_Backend)
+# Turkcell Full Stack Developer 2022
+* [GitHub](https://)
 * 
 ### Gereksinimler
-Java 11
+
 intellij idea Ultimate 
 Visual Studio Code
 Node js
@@ -14,6 +14,8 @@ Node js
 
 ## Visual Studio codes
 Extensisons
+- Tabnine
+- Fira codes google font indirmelisin
 - Browser preview
 - Auto Close tag
 - Auto import
@@ -24,14 +26,13 @@ Extensisons
 - Es7+ React/REdux/React-Native snippets
 - Html Snippets
 - JsQuery Snippets
-- Live Server
+- Live Server 
 - Material Icon Theme
 - Open-in-Browser
 - Path Intellisense
 - Prettier Code formatter
 - Project Manager
 - Reactjs code Snippets
-- -Tabnine
 
 ---
 

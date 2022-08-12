@@ -1,0 +1,480 @@
+/*
+project name: one pages 
+project date: 30-Mayis 2022
+project author: Hamit Mızrak
+project version: v.1
+*/
+/* ############################################################################ */
+/* common property */
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* scroll-y */
+.scrollbar-auto {
+  overflow-y: auto;
+}
+body {
+  /* font-family: 'Quicksand', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  background: #edeff1;
+}
+
+html {
+  font-size: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  text-align: justify;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
+}
+
+/* ############################################################################ */
+/* line-clamp */
+.line_clamp3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line_clamp4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line_clamp5 {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line_clamp6 {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line_clamp7 {
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ############################################################################ */
+
+/*  nav */
+#navbar {
+  opacity: 0.9;
+}
+
+#logo_div {
+  /* border-radius:50%; */
+}
+
+#logo_div:hover {
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.6);
+
+}
+
+#navbar_id ul > li > a {
+  font-size: 0.8rem;
+}
+
+#navbar_id ul > li > a > i {
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+  color: chartreuse;
+}
+
+#right_navbar > button,
+a {
+  font-size: 0.8rem;
+}
+
+/* ############################################################################ */
+/* header */
+header {
+  background-image: url('picture/header.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: -1;
+  height: 110vh;
+  padding-top: 15rem;
+}
+
+/* ##############################################################################*/
+/* main */
+
+#section10 {
+  margin-bottom: 4rem;
+  margin-top:2rem;
+}
+
+#section10  .icon_message  i{
+  font-size:6rem;
+}
+
+/* section-1 */
+#ability {
+  padding: 6rem;
+  background: #3d3d3d;
+}
+
+#ability i {
+  color: red;
+  font-size: 8rem;
+}
+
+/* #ability,#section_3,#section_2,#section_6{
+    margin-bottom:6rem;
+} */
+
+#ability .card {
+  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.8);
+}
+
+#ability .card:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.parallax_class{
+  background-color:transparent;
+  background-image: url('picture/coffee-g4d61840d9_1920.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color:white;
+  height:20rem;
+  padding:2rem;
+}
+
+
+
+/* section-2: blog */
+/* #section_2 {
+  background: url('picture/coffee-g4d61840d9_1920.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+  opacity: 0.9;
+  padding: 6rem;
+} */
+
+/* resim arka planda blur */
+#section_2{
+    position: relative; 
+}
+#section_2::before{  
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: "";
+    background-image: url('picture/office-gc2455a673_1920.jpg');
+    background-size: cover;
+    opacity: 0.9;
+}
+
+/* card */
+#section_2 .card {
+  margin-bottom: 2rem;
+}
+
+#section_2 .card .card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#section_2 .card > img:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* section-3 */
+#section_3 {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 9rem;
+}
+#newspaper_id {
+  display: -webkit-box;
+  -webkit-line-clamp: 12;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-indent: 3rem;
+  /* column-count: 3;
+    column-rule:solid rgba(0,0,0,.6); */
+}
+
+/* back_to_top */
+#back_top {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 2.6rem;
+  padding-top: 0.5rem;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+  border-radius: 0.4rem;
+  opacity: 0.7;
+}
+
+#back_top:hover {
+  width: 7rem;
+  opacity: 0.9;
+}
+
+#section_6 {
+  padding: 8rem;
+  background: #313131;
+}
+
+#section_7 {
+  padding: 6rem;
+}
+
+#section_7 > h4 {
+  margin-top: 20px;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 40px;
+}
+
+#section_7>img {
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 5rem;
+}
+
+#section_7>img:hover{
+    opacity: 0.9;
+}
+
+
+/* ################################################################# */
+#counter {
+  padding-top:2rem;
+  padding-bottom:2rem;
+  background-color: rgba(60, 40, 215, 0.6);
+}
+
+#counter i {
+  font-size: 5rem;
+  color: white
+}
+#counter .counter-header h3,
+#counter .counter-header p {
+  color: #fff;
+  text-align: center;
+}
+
+#counter .counters {
+  padding-top: 40px;
+}
+
+#counter .counters span {
+  font-weight: bold;
+  font-size: 48px;
+  display: block;
+  color: #fff;
+}
+
+#counter .counters p {
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #cce5ff;
+}
+
+
+/* ################################################################# */
+
+#contact_form > .row > div {
+  margin-bottom: 0.6rem;
+}
+
+#contact_form {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+}
+
+/* ################################################################# */
+
+/* footer */
+footer {
+  min-height: 20rem;
+  width: auto;
+  background-color: #3d3d3d;
+  color: white;
+}
+
+#address_id i {
+  margin-right: 0.6rem;
+  color: blueviolet;
+}
+
+#address_id a {
+  color: chartreuse;
+  font-size: 0.8rem;
+}
+
+#copy_right {
+  background: #2f3337;
+}
+
+/* ################################################################# */
+/* Responseive Design */
+/* 600<=<899 */
+@media screen and (max-width:600px) {
+
+  .navbar-toggler{
+    font-size: .8rem;
+    background-color: rgb(132, 239, 24);
+    color: black;
+  }
+
+  #navbar_id {
+    max-width: 100%;
+  }
+
+  #header h2,
+  h4 {
+    font-size: 1rem;
+  }
+
+  #header a {
+    font-size: 1rem;
+    display: block;
+    margin-top: .5rem;
+  }
+
+  header {
+    height: 95vh;
+    padding-top: 5rem;
+  }
+
+  #section10 {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+
+  #section10 .icon_message i {
+    font-size: 3rem;
+  }
+
+  #section10 button {
+    font-size: .5rem;
+    margin-bottom: 2rem;
+    margin-top: 0 !important;
+  }
+
+  #counter {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: rgba(0, 0, 0);
+  }
+
+  #counter i {
+    font-size: 2rem;
+    color: white
+  }
+
+  #counter .counter-header h3,
+  #counter .counter-header p {
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  #counter .counters {
+    padding-top: 40px;
+  }
+
+  #counter .counters span {
+    font-weight: bold;
+    font-size: 24px;
+    display: block;
+    color: #fff;
+  }
+
+  #counter .counters p {
+    padding: 0;
+    margin: 0 0 20px 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #cce5ff;
+  }
+
+ 
+  .parallax_class p {
+    font-size: .8rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+
+  #section_3 {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+  }
+
+  #section_3 a {
+    max-height: 3rem;
+    text-align: center !important;
+  }
+
+  #newspaper_id {
+    display: -webkit-box;
+    -webkit-line-clamp: 12;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-indent: 3rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  #section_7 {
+    display: none;
+  }
+
+  #section_6 {
+    padding: .1rem;
+    background: #313131;
+  }
+
+}
+
+/* ################################################# */
+/* 900<=<1199 */
+@media screen and (max-width:900px) {}
+
+/* x>=1200 */
+@media screen and (max-width:1200px) {}
