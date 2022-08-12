@@ -102,5 +102,3 @@ terminal: package.json seviyesinde olacak şekilde
 npm install axios
 npm install bootstrap --save
 npm install node-sass --save
-
-
