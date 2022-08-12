@@ -2,8 +2,8 @@
 
 ![readme](./picture/readme.jpg)
 
-# Turkcell Java Full Stack 2022
-* [GitHub](https://https://)
+# Turkcell Java Full Stack 12 Ağustos2022
+* [GitHub](https://https://https://github.com/hamitmizrak/Turkcell_FullStackDevelopment_Frontend_Backend)
 * 
 ### Gereksinimler
 Java 11
