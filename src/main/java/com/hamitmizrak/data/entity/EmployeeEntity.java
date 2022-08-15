@@ -22,8 +22,8 @@ import javax.persistence.Table;
 @Table(name="employee")
 public class EmployeeEntity  extends  BaseEntity{
 
-    private String name;
-    private String surname;
-    private String hescode;
+    private String  name;
+    private String  surname;
+    private String  hescode;
     private double price;
 }

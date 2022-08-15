@@ -19,7 +19,7 @@ public class EmployeeEntityBean {
     private int randomData(){
         Random random = new Random();
         int data = random.nextInt(300)+10;
-        System.out.println(data);
+       // System.out.println(data);
         return data;
     }
 
