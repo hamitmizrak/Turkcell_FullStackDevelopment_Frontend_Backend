@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 })
 
 //Auditing
-@EnableJpaAuditing(auditorAwareRef = "auditorAware")
+@EnableJpaAuditing(auditorAwareRef = "auditorAwareMethod")
 public class TurkcellFullStackDevelopmentApplication {
 
     //PSVM

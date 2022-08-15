@@ -9,23 +9,23 @@ import java.util.Map;
 
 public interface IEmployeeServices {
 
-    //ModelMapper
-    public EmployeeDto entityToDto(EmployeeEntity employeeEntity);
-    public EmployeeEntity dtoToEntity(EmployeeDto employeeDto);
+    //modelMapper: DTO  to Entity
+    public EmployeeDto EntityToDto(EmployeeEntity employeeEntity);
+    public EmployeeEntity DtoToEntity(EmployeeDto  employeeDto);
 
     //save
     public EmployeeDto createEmployee(EmployeeDto employeeDto);
 
     //list
-    public List<EmployeeDto>  getAllEmployee(EmployeeDto employeeDto);
+    public List<EmployeeDto> getAllEmployees();
 
-    //find
-    public ResponseEntity<EmployeeDto>   getEmployeeById(Long id);
+    //filter:find
+    public ResponseEntity<EmployeeDto> getEmployeeById(Long id) throws Throwable;
 
     //update
-    public ResponseEntity<Map<String,Boolean>>   deleteEmployee(Long id,EmployeeDto employeeDto);
+    public ResponseEntity<EmployeeDto> updateEmployee(Long id,EmployeeDto employeeDto) throws Throwable;
 
     //delete
-    public ResponseEntity<EmployeeDto>   deleteEmployee(Long id);
+    public ResponseEntity<Map<String,Boolean>> deleteEmployee(Long id);
 
 }

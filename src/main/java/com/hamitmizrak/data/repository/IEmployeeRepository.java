@@ -10,7 +10,7 @@ import java.util.List;
 public interface IEmployeeRepository extends PagingAndSortingRepository<EmployeeEntity,Long> {
 
     //delived Query
-    List<EmployeeEntity> findEmployeeEntitiesByEmployeeNameStartsWith(String name);
+   // List<EmployeeEntity> findEmployeeEntitiesByEmployeeNameStartsWith(String name);
 
 
 }
