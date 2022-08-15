@@ -3,7 +3,7 @@
 ![readme](./picture/readme.png)
 
 # Turkcell Java Full Stack 12 Ağustos2022
-* [GitHub](https://https://https://github.com/hamitmizrak/Turkcell_FullStackDevelopment_Frontend_Backend)
+* [GitHub](https://github.com/hamitmizrak/Turkcell_FullStackDevelopment_Frontend_Backend)
 * 
 ### Gereksinimler
 Java 11
