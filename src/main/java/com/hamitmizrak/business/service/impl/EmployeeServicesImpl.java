@@ -108,6 +108,7 @@ public class EmployeeServicesImpl  implements IEmployeeServices {
         //setEntity
         entityFind.setName(entity.getName());
         entityFind.setSurname(entity.getSurname());
+        entityFind.setHescode(entity.getHescode());
         entityFind.setPrice(entity.getPrice());
 
         EmployeeEntity entity2= repository.save(entityFind);
