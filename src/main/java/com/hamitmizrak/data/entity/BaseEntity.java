@@ -11,6 +11,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 // lombok
 @Getter
@@ -22,7 +23,8 @@ import javax.persistence.*;
 // Auditing
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = { "created_date,updated_dated" })
-abstract public class BaseEntity {
+abstract public class BaseEntity  implements Serializable {
+    public static final Long serialVersionUID =1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
