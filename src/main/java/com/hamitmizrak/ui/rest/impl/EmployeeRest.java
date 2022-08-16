@@ -19,8 +19,16 @@ import java.util.Map;
 //dış dünyaya açılan kapı
 public class EmployeeRest implements IEmployeeRest {
 
-    @Autowired
+    // 1.YOL ==> Inject Filed
+   // @Autowired
+   // IEmployeeServices services;
+
+    // 2.YOL ==> Inject Constructor
     IEmployeeServices services;
+
+    public EmployeeRest(IEmployeeServices services) {
+        this.services = services;
+    }
 
     //ROOT
     //http://localhost:8080/api/v1
@@ -33,6 +41,7 @@ public class EmployeeRest implements IEmployeeRest {
 
     //SAVE
     //http://localhost:8080/api/v1/employees
+    // Dikkat: @RequestBody eklemyi unutma
     @Override
     @PostMapping("/employees")
     public EmployeeDto createEmployee(@RequestBody EmployeeDto employeeDto) {
@@ -46,6 +55,10 @@ public class EmployeeRest implements IEmployeeRest {
     @Override
     @GetMapping("/employees")
     public List<EmployeeDto> getAllEmployees() {
+        //1.YOL
+        //Collection<EmployeeDto>
+
+        //.YOL
        List<EmployeeDto> list= services.getAllEmployees();
         return list;
     }
@@ -61,6 +74,7 @@ public class EmployeeRest implements IEmployeeRest {
 
     //UPDATE
     //http://localhost:8080/api/v1/employees/1
+    // Dikkat: @RequestBody eklemyi unutma
     @Override
     @PutMapping("/employees/{id}")
     public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable(name = "id")  Long id, @RequestBody EmployeeDto employeeDto) throws Throwable {

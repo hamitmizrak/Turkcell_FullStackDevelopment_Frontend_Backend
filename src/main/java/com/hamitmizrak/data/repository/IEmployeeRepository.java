@@ -8,10 +8,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
+//CrudRepository
+//JpaRepository
+//PagingAndSortingRepository
 public interface IEmployeeRepository extends JpaRepository<EmployeeEntity,Long> {
 
     //delived Query
-   // List<EmployeeEntity> findEmployeeEntitiesByEmployeeNameStartsWith(String name);
-
-
+   // List<EmployeeEntity> findEmployeeEntitiesByNameStartsWith(String name);
 }

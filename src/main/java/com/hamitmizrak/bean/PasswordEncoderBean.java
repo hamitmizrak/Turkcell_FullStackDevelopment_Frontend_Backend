@@ -8,7 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class PasswordEncoderBean {
 
-
+    //Login Register için maskeleme işlemlerinde kullancağım
     @Bean
     public PasswordEncoder passwordEncoderMethod(){
         return new BCryptPasswordEncoder();

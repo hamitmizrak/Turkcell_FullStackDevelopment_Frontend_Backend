@@ -24,6 +24,8 @@ public class UserRegisterEntity implements Serializable {
     private Long userRegisterId;
     private String name;
     private String surname;
+
+    @Column(unique = true)
     private String email;
     private String password;
     private String picture;

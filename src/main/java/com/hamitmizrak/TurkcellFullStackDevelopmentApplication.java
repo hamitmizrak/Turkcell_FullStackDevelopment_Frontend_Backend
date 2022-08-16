@@ -20,7 +20,7 @@ public class TurkcellFullStackDevelopmentApplication {
         //devtool enabled tru
         System.setProperty("spring.devtools.restart.enabled", "true");
 
-        //JOptionalPane calisamasi icin
+        //AWT: JOptionalPane calisamasi icin
         System.setProperty("java.awt.headless", "false"); // Disables headless
 
         //Main Running

@@ -15,18 +15,27 @@ import org.springframework.web.bind.annotation.*;
 import javax.transaction.Transactional;
 import java.util.*;
 
-@Transactional
 @Service
+
+//transaction
+@Transactional
 @Log4j2
 //İşin yükünü alan kısım
 //Unutma: Null Pointer Exception almamak @RequestBody eklemelisiniz
 public class EmployeeServicesImpl  implements IEmployeeServices {
 
-    @Autowired
+    //1.YOL
+    // @Autowired: Inject Fiedl
     IEmployeeRepository  repository;
 
-    @Autowired
     ModelMapper modelMapper;
+
+    //2.YOL : Inject Constructor
+    @Autowired
+    public EmployeeServicesImpl(IEmployeeRepository repository, ModelMapper modelMapper) {
+        this.repository = repository;
+        this.modelMapper = modelMapper;
+    }
 
     //model mapper
     @Override
@@ -45,6 +54,7 @@ public class EmployeeServicesImpl  implements IEmployeeServices {
 
     //SAVE
     //http://localhost:8080/save/employees
+    // Dikkat: @RequestBody==> Ekelmeyi unutma
     @Override
     @PostMapping("/save/employees")
     public EmployeeDto createEmployee(@RequestBody EmployeeDto employeeDto) {
@@ -81,20 +91,21 @@ public class EmployeeServicesImpl  implements IEmployeeServices {
         EmployeeEntity entity= repository.findById(id).orElseThrow(()->new ResourceNotFoundException("Employee "+id+" id bulamadı !!!"));
 
         //2.YOL
-        Optional<EmployeeEntity> findData = repository.findById(id);
-        if (findData.isPresent()) {
-            findData.get();
-        } else {
-        }
+        //  Optional<EmployeeEntity> findData = repository.findById(id);
+        //   if (findData.isPresent()) {
+        //     findData.get();
+        //  } else {
+        //   }
 
         //ModelMapper
         EmployeeDto dto=   EntityToDto(entity);
         return ResponseEntity.ok(dto);
     }
 
-    //UPDATE
-    //Update
-    //http://localhost:8080/update/employees/1
+    // UPDATE
+    // Update
+    // http://localhost:8080/update/employees/1
+    // Dikkat: @RequestBody==> Ekelmeyi unutma
     @Override
     @PutMapping("/update/employees/{id}")
     public ResponseEntity<EmployeeDto> updateEmployee(  @PathVariable(name="id")  Long id, @RequestBody EmployeeDto employeeDto) throws Throwable {
@@ -134,6 +145,5 @@ public class EmployeeServicesImpl  implements IEmployeeServices {
         response.put("silindi",Boolean.TRUE);
         return ResponseEntity.ok(response);
     }
-
 
 }

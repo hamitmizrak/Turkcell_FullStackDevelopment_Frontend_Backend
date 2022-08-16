@@ -8,6 +8,6 @@ public class AuditorAwareImp implements AuditorAware<String> {
 
     @Override
     public Optional<String> getCurrentAuditor() {
-        return Optional.of("HamitMızrak");
+        return Optional.of("Hamit Mızrak");
     }
 }

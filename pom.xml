@@ -55,7 +55,6 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-
         <!-- web jar Bootstrap-->
         <dependency>
             <groupId>org.webjars</groupId>

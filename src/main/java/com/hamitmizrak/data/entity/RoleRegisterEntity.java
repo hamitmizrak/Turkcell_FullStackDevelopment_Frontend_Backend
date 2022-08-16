@@ -42,6 +42,11 @@ public class RoleRegisterEntity  implements Serializable {
     public RoleRegisterEntity(){
     }
 
+    //parametreli constructor
+    public RoleRegisterEntity(String roleName) {
+        this.roleName = roleName;
+    }
+
     //parametreli constructor:  Dikkat userRegisterEntities ekledim
     public RoleRegisterEntity(Long rolesId, String roleName, Date createdDate, Collection<UserRegisterEntity> userRegisterEntities) {
         this.rolesId = rolesId;

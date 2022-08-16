@@ -8,6 +8,8 @@ import org.springframework.data.domain.AuditorAware;
 @Configuration
 public class AuditorAwareBean  {
 
+    //Dikkat: auditorAwareMethod ==>
+    // @SpringBootApplication ==> @EnableJpaAuditing(auditorAwareRef = "auditorAwareMethod")
     @Bean
     public AuditorAware auditorAwareMethod(){
         return new AuditorAwareImp();

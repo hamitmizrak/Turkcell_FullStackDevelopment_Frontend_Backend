@@ -10,8 +10,14 @@ Java 11
 intellij idea Ultimate 
 Visual Studio Code
 Node js
----
 
+---
+## Intellij Idea Plugins
+Plugin
+- Tabnine
+- Bootstrap 5
+
+---
 ## Visual Studio codes
 Extensisons
 - Browser preview
@@ -31,10 +37,9 @@ Extensisons
 - Prettier Code formatter
 - Project Manager
 - Reactjs code Snippets
-- -Tabnine
+- Tabnine
 
 ---
-
 ## Tecnology
 ##FrontEnd
 - Html5
@@ -47,7 +52,6 @@ Extensisons
 
 
 ---
-
 ## BackEnd
 * javase
 * jdbc crud native
@@ -59,7 +63,6 @@ Extensisons
 * spring security
 
 ---
-
 ## Libraries
 Thymeleaf
 Lombok
@@ -82,11 +85,10 @@ Spring Security
 Spring Boot DevTools
 Spring Configuration Processor
 Spring Boot Actuator
+Prometheus
 
 ---
-
 ## Docker Deployment
-
 1.ADIM
 npx create-react-app frontend
 cd frontend

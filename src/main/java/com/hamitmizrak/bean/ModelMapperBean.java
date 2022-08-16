@@ -9,7 +9,9 @@ import org.springframework.context.annotation.Configuration;
 public class ModelMapperBean {
 
     @Bean
+    //Entity ile Dto arasında birbirine çevirmek için kullanıyoruz
     public ModelMapper modelMapperMethod(){
+        //dikkat: new ModelMapper() yapıyoruz yanlışlıkla Class ismini yazma
         return new ModelMapper();
     }
 }
