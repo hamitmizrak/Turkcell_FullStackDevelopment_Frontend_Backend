@@ -8,6 +8,7 @@ import lombok.extern.log4j.Log4j2;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 //lombok
 @Data
@@ -20,7 +21,8 @@ import javax.persistence.Table;
 //Entity
 @Entity
 @Table(name="employee")
-public class EmployeeEntity  extends  BaseEntity{
+public class EmployeeEntity  extends  BaseEntity implements Serializable {
+    public static final Long serialVersionUID =1L;
 
     private String  name;
     private String  surname;
