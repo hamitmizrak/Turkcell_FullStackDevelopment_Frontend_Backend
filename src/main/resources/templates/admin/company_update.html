@@ -1,0 +1,122 @@
+<!doctype html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Thymeleaf String 1</title>
+
+	<!-- Turkce karakter -->
+	<meta charset="utf-8">
+
+	<!-- responsive design -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- seo -->
+	<meta name="keywords" content="html5,css3,js,jquery,bootstrap,react,javase" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+
+	<!-- font-awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+	<!-- Bootstrap CSS v5.0.2 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+
+	<!-- jquery  -->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+	<!-- react libraries -->
+	<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+	<link rel="stylesheet" th:href="@{/css/template.css}">
+	<script th:src="@{/js/template.js}"></script>
+
+</head>
+
+<body class="container bg-dark44 text-warning44">
+	<!-- start codes -->
+	<!-- table.table.hover.table-strpied.table>thead>tr>th{item $}*3^^tbody>tr>td{item $}*3-->
+	<p class="display-4 mt-5 mb-5 uppercase text-center">Şirket </p>
+	<p th:text="${company_not_found}"></p>
+	
+	
+	
+	<!--   <input type="text"  class="form-control mb-4"  id="id" th:field="*{id}" disabled="true"/> -->
+	
+	<form th:action="@{/update/company/{id}(id=${company_update.id})}" th:object="${company_update}" th:method="post">
+	<input type="text"  class="form-control mb-4"  id="id" th:field="*{id}" disabled="true"/> 
+				<div class="form-group">
+			<input type="text" th:field="*{companyName}" class="form-control mb-4" name="companyName" id="companyName"
+				placeholder="companyName giriniz" autofocus="autofocus" />
+			<div th:if="${#fields.hasErrors('companyName')}" th:errors="*{companyName}" class="text-danger">
+			</div>
+			</div>
+
+		<div class="form-group">
+			<input type="text" th:field="*{companyLogo}" class="form-control mb-4" name="companyLogo" id="companyLogo"
+				placeholder="companyLogo giriniz" />
+			<div th:if="${#fields.hasErrors('companyLogo')}" th:errors="*{companyLogo}" class="text-danger">
+			</div>
+			</div>
+			
+			<div class="form-group">
+			<input type="text" th:field="*{companyPassword}" class="form-control mb-4" name="companyPassword" id="companyPassword"
+				placeholder="companyPassword giriniz" />
+			<div th:if="${#fields.hasErrors('companyPassword')}" th:errors="*{companyPassword}" class="text-danger">
+			</div>
+			</div>
+			
+			<div class="form-group">
+			<input type="text" th:field="*{companyEmailAddress}" class="form-control mb-4" name="companyEmailAddress"
+				id="companyEmailAddress" placeholder="companyEmailAddress giriniz" />
+			<div th:if="${#fields.hasErrors('companyEmailAddress')}" th:errors="*{companyEmailAddress}" class="text-danger">
+			</div>
+			</div>
+			
+			<div class="form-group">
+			<input type="number" th:field="*{companyTaxNumber}" class="form-control mb-4" name="companyTaxNumber"
+				id="companyTaxNumber" placeholder="companyTaxNumber giriniz" min="10" max="100" step="1"/>
+			<div th:if="${#fields.hasErrors('companyTaxNumber')}" th:errors="*{companyTaxNumber}" class="text-danger">
+			</div>
+			</div>
+			
+			<div class="form-group">
+			<textarea rows="5" th:field="*{companyMessage}" class="form-control mb-4" name="companyMessage" id="companyMessage"
+				placeholder="companyMessage giriniz" ></textarea>
+			<div th:if="${#fields.hasErrors('companyMessage')}" th:errors="*{companyMessage}" class="text-danger">
+			</div>
+			</div>
+			
+			<div class="form-group">
+				<input type="text" th:field="*{companyTelephoneNumber}" class="form-control mb-4"
+				name="companyTelephoneNumber" id="companyTelephoneNumber"
+				placeholder="companyTelephoneNumber giriniz" />
+			<div th:if="${#fields.hasErrors('companyTelephoneNumber')}" th:errors="*{companyTelephoneNumber}"
+				class="text-danger">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<input type="date" th:field="*{foundationYear}" class="form-control mb-4" name="foundationYear" id="foundationYear"
+				placeholder="foundationYear giriniz" />
+			<div th:if="${#fields.hasErrors('foundationYear')}" th:errors="*{foundationYear}" class="text-danger">
+			</div>
+			</div>
+
+		<div class="text-center mt-5 mb-5">
+			<input type="reset" class="btn btn-danger" value="TEMİZLE" />
+			<input type="submit" class="btn btn-primary" value="GÖNDER" />
+			<a th:href="@{/list/company}" class="btn btn-warning">LIST</a>
+		</div>
+		</form>
+
+	<!-- ends codes -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

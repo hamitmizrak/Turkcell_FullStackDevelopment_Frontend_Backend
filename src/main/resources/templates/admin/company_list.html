@@ -1,0 +1,168 @@
+<!doctype html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Thymeleaf String 1</title>
+
+    <!-- Turkce karakter -->
+    <meta charset="utf-8">
+
+    <!-- responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- seo -->
+    <meta name="keywords" content="html5,css3,js,jquery,bootstrap,react,javase" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+
+    <!-- jquery  -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- react libraries -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <link rel="stylesheet" th:href="@{/css/template.css}">
+    <script th:src="@{/js/template.js}"></script>
+    
+    <!-- dataTables CSS: paging and sorting -->
+    <link rel="stylesheet" 	type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css" />
+
+</head>
+
+<body class="container bg-dark44 text-warning44">
+    <!-- start codes -->
+    <!-- table.table.hover.table-strpied.table>thead>tr>th{item $}*3^^tbody>tr>td{item $}*3-->
+
+
+			<h3>Şirket Listesi</h3>
+			
+			<hr/>
+			  <!--Dikkatttt: save öncesinde slash(/) yazmayı unutma-->
+			<a th:href="@{/save/company}" class="btn btn-primary">Şirket Ekle</a>
+			<a th:href="@{/company/data/all}" class="btn btn-warning">All Data</a>
+			<p th:text="${data_key}"></p>
+			<br/><br/>
+
+
+	<table class="table table-hover table-strpied"  id="datalistcompanyTable">
+        <thead>
+            <tr>
+                <th th:text="#{companyId}" class="uppercase"></th>
+                <th th:text="#{companyName}" class="uppercase"></th>
+                <th th:text="#{companyLogo}" class="uppercase"></th>
+                <th th:text="#{companyPassword}" class="uppercase"></th>
+                <th th:text="#{companyEmailAddress}" class="uppercase"></th>
+                <th th:text="#{companyTaxNumber}" class="uppercase"></th>
+                <th th:text="#{companyMessage}" class="uppercase"></th>
+                <th th:text="#{companyTelephoneNumber}" class="uppercase"></th>
+                <th th:text="#{foundationYear}" class="uppercase"></th>
+                <th th:text="#{update}" class="uppercase"></th>
+                <th th:text="#{show}" class="uppercase"></th>
+                <th th:text="#{delete}" class="uppercase"></th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr th:if="${company.id>0}" th:each="company:${company_key}">
+                <td th:text="${company.id}"></td>
+                <td th:text="${company.companyName}"></td>
+                <td th:text="${company.companyLogo}"></td>
+                <td th:text="${company.companyPassword}"></td>
+                <td th:text="${company.companyEmailAddress}"></td>
+                <td th:text="${company.companyTaxNumber}"></td>
+                <td th:text="${company.companyMessage}"></td>
+                <td th:text="${company.companyTelephoneNumber}"></td>
+                <td th:text="${company.foundationYear}"></td>
+          
+                <td> <a th:href="@{/update/company/{id}(id=${company.id})}" class="btn btn-info btn-sm">
+                <i class="fa-solid fa-wrench"></i> 
+                <!-- <span th:text="#{update}"></span> -->
+                </a> 
+                </td>
+                
+                <td> 
+                <a th:href="@{/find/company/{id}(id=${company.id})}" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-eye btn-sm"></i> 
+                <!-- <span th:text="#{show}"></span> -->
+                 </a> 
+                </td>
+                   
+             <!--   
+                <td> <a  th:href="@{/delete/company/{id}(id=${company.id})}" 
+                          th:onclick="if(!(confirm('Silmek İstiyor musunuz ?'))) return false"
+                          class="btn btn-danger  btn-sm">
+                          <i class="fa-solid fa-trash-can"></i> 
+                     </a>   
+                </td>
+                 --> 
+                <td> 
+               <!-- http://localhost:8080/delete/company/1 -->
+                <a class="btn btn-danger" th:onclick="'deleteSweetAlertCompany(\'/delete/company/' + ${company.id} +'\')'">
+                <i class="fa-solid fa-trash-can"></i></a>
+                </td>
+                
+            </tr>
+        </tbody>
+    </table>
+    
+
+    
+        <!-- dataTables JS: paging and sorting -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#datalistcompanyTable").DataTable({
+						'aoColumnDefs': [{
+        				'bSortable': false,
+        				'aTargets': [-1] /* 1st one, start by the right */
+    				}]
+				});
+			})
+		</script>
+    
+    <!-- ends codes -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    
+    
+    <!--  Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript">
+     function deleteSweetAlertCompany(url){
+      swal({
+         title: "Silmek istediğinizden emin misiniz?",
+         text: "Silindikten sonra tekrar geri alınamaz.",
+         icon: "warning",
+         buttons: ["İptal", "Sil"],
+         dangerMode: true,
+       })
+       .then((willDelete) => {
+         if (willDelete) {
+           swal("Kayıt başarılı bir şekilde silindi.", {
+             icon: "success",
+           });
+           window.location.href = url;
+         } else {
+           swal("İptal edildi.",{
+            icon: "warning",
+           });
+         }
+       });
+     }
+     </script>
+    
+</body>
+
+</html>

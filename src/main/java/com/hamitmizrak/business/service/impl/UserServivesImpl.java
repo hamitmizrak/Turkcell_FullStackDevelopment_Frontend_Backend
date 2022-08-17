@@ -13,8 +13,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import javax.management.relation.Role;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,11 +30,11 @@ public class UserServivesImpl implements IUserServices {
     @Autowired
     PasswordEncoderBean passwordEncoderBean;
 
-    //1.YOL
-    //@Autowired
-    //IUserRegisterRepository repository;
+    // 1.YOL
+    // @Autowired
+    // IUserRegisterRepository repository;
 
-    //2.YOL
+    // 2.YOL
     IUserRegisterRepository repository;
 
     //parametreli constructor
@@ -45,7 +43,7 @@ public class UserServivesImpl implements IUserServices {
         this.repository = repository;
     }
 
-    //Kullanıcıyı Database kaydetmek
+    // Kullanıcıyı Database kaydetmek
     @Override
     public UserRegisterDto saveUserRegister(UserRegisterDto dto) {
         //RolesRegisterEntity
@@ -85,5 +83,10 @@ public class UserServivesImpl implements IUserServices {
     //Kullanıcı Rol metotumuz
     private Collection<? extends GrantedAuthority> roleAuthories(Collection<RoleRegisterEntity> roles) {
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getRoleName())).collect(Collectors.toList());
+    }
+
+    //sistemde email ve şifreyi almak
+    public UserRegisterEntity findByEmailAndPassword(String email, String password){
+   return repository.findByEmailAndPassword(email, password);
     }
 }

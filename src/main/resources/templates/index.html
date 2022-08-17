@@ -1,50 +1,865 @@
 <!doctype html>
-<html  th:lang="${#locale.language}"  xmlns:th="http://www.thymeleaf.org" >
-<head>
-    <title>Thymeleaf String</title>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+<!-- title-->
+<title>One Page Project</title>
+<!-- favicon -->
+<link rel="icon" type="image/x-icon" href="picture/turkcell--600.png">
 
-    <!-- Turkce karakter -->
-    <meta charset="utf-8">
+<!-- Turkce karakter -->
+<meta charset="utf-8" />
 
-    <!-- responsive design -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- responsive design -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- seo -->
-    <meta name="keywords" content="html5,css3,js,jquery,bootstrap,react,javase" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+<!-- seo -->
+<meta name="keywords" content="html5,css3,js,jquery,bootstrap,react,es5,es6" />
+<meta name="description" content="one pages, html5,css3,js,jquery,bootstrap,seo" />
+<meta name="author" content="Hamit Mızrak" />
 
-    <!-- font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+<!-- Google Fonts-->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Quicksand:wght@300&display=swap"
+    rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <!-- google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS v5.0.2 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+<!-- Font awesome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
-    <!-- jquery  -->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- Bootstrap CSS v5.0.2 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 
-    <!-- react libraries -->
-    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<!-- jquery UI -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
-    <link rel="stylesheet"   th:href="@{/css/index.css}">
-    <script th:src="@{/js/index.js}"></script>
+<!-- External CSS -->
+<link rel="stylesheet" th:href="@{/css/index.css}">
 
+
+<!-- animate CSS-->
+<link rel="stylesheet" th:href="@{/css/animate.min.css}">
+<!-- wow js-->
+<script th:src="@{/js/wow.min.js}"></script>
+<script> new WOW(
+     {
+        boxClass:     'wow',      // default
+        animateClass: 'animated', // default
+        offset:       0,          // default
+        mobile:       true,       // default
+        live:         true        // default
+       }
+
+).init() </script>
 </head>
 
-<body class="container">
-
-    <!-- start codes -->
-    <h1 class="text-primary">Thymeleaf1</h1>
-    <p th:text="'Merhabalar Thymeleaf'"></p>
+<body  class="scrollbar-auto" data-bs-spy="scroll" data-bs-target="#navbar-example">
 
 
-    <!-- ends codes -->
+
+    <!-- Navbar start -->
+    <nav class="navbar fixed-top  navbar-expand-lg navbar-dark bg-dark" id="navbar">
+        <!-- Container wrapper -->
+        <div class="container" id="navbar-example">
+            <!-- Navbar brand -->
+
+
+            <div id="logo_div">
+                <a class="navbar-brand me-2" href="#">
+                    <img th:src="@{/images/logo2.png}" height="40" alt="Logo" style="margin-top: -1px;" />
+                </a>
+            </div>
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_id"
+                aria-controls="navbar_id" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbar_id">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto ms-5 mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link me-2" href="#ability"> <i class="fa-brands fa-battle-net"></i>Ability</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_3"> <i class="fa-solid fa-rectangle-ad"></i>NewsPaper</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_2"><i class="fa-solid fa-blog"></i>Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_6"> <i class="fa-solid fa-address-card"></i>Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_7"> <i class="fa-solid fa-people-group"></i>About Me</a>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="ui-widget">
+                            <input id="tags">
+                        </div>
+                    </li>
+
+
+
+
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="#">Action 1</a>
+                            <a class="dropdown-item" href="#">Action 2</a>
+                        </div>
+                    </li> -->
+                </ul>
+                <!-- Left links -->
+
+                <div class="d-flex align-items-center" id="right_navbar">
+                    <button data-bs-toggle="modal" data-bs-target="#modelId" type="button"
+                        class="btn btn-link px-3 me-2">
+                        <i class="fa-solid fa-user-large" style="color:#ffca05"></i>
+                    </button>
+                    <button data-bs-toggle="modal" data-bs-target="#registerId" type="button"
+                        class="btn btn-primary btn-sm me-3">
+                        Register
+                    </button>
+                    <a class="btn btn-dark px-3" href="https://github.com/hamitmizrak/TeachCareer_Tubisad" role="button"><i
+                            class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar ends -->
+
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal : Login -->
+    <!-- modal-login start -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title">Login</h6>
+                    <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-1"> <label class="form-label" for="user_email">
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </label></div>
+                                    <div class="col">
+                                        <input type="text" id="user_email" name="user_email" placeholder="email adresiniz ..." class="form-control" required
+                                            autofocus />
+                                        <span id="validation_email" class="text-danger" style="font-size:.8rem ;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-1"> <label class="form-label" for="user_password">
+                                            <i class="fa-solid fa-key"></i>
+                                        </label></div>
+                                    <div class="col">
+                                        <input type="text" id="user_password" name="user_password" placeholder="şifreniz ..." class="form-control" />
+                                        <span id="validation_password" class="text-danger" style="font-size:.8rem ;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-outline mt-2 mb-2">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-1"> <label class="form-label" for="form2Example1">
+                                        </label></div>
+                                    <div class="col">
+                                        <button type="reset" class="btn btn-outline-danger">Temizle</button>
+                                        <button id="btnSubmit" type="submit" class="btn btn-outline-primary">Giriş
+                                            Yap</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                </form>
+                </div>
+                </div>
+                </div>
+    </div>
+    <!-- modal-login ends -->
+
+
+    <!-- Modal Register -->
+        <!-- Modal Register Start -->
+        <div class="modal fade" id="registerId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- modal header -->
+            <div class="modal-header">
+            <h5 class="modal-title">Register</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- modal body -->
+            <div class="modal-body">
+            <form>
+                <!-- User name input -->
+                <div class="form-outline mb-4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-1">
+                                <label class="form-label" for="register_name">
+                                    <i class="fa-solid fa-user pt-2"></i>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <input type="text" id="register_name" name="register_name" placeholder="kullanıcı adınız..."
+                                    class="form-control" autofocus required />
+                                <span id="validation_registerName" class="text-danger" style="font-size: 0.8rem"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-1">
+                                <label class="form-label" for="register_email">
+                                    <i class="fa-solid fa-envelope pt-2"></i>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <input type="email" id="register_email" name="register_email" placeholder="email adresiniz..."
+                                    class="form-control" required />
+                                <span id="validation_registerEmail" class="text-danger" style="font-size: 0.8rem"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-1">
+                                <label class="form-label" for="register_password">
+                                    <i class="fa-solid fa-key pt-2"></i>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <input type="password" id="register_password" name="register_password" placeholder="şifreniz..."
+                                    class="form-control" required />
+                                <span id="validation_registerPassword" class="text-danger" style="font-size: 0.8rem"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- button -->
+                <div class="container">
+                    <div class="mt-2 mb-2">
+                        <button type="submit" id="btnSubmit2" class="btn btn-primary btn-block w-100 btn-sm">
+                            Kayıt Ol
+                        </button>
+                    </div>
+                </div>
+            </form>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Register End -->
+    <!-- Register end -->
+
+    <!-- header-start -->
+    <header id="header">
+        <div class="jumbotron text-white">
+            <div class="container" style="opacity:.9">
+                <div class="p-5 text-center">
+                    <h2 class="opacity-25 text-uppercase  shadow wow bounceIn animated bg-warning text-dark" data-wow-delay=".40s">
+                        Turkcell Frondend Backend Eğitimimize hoşgeldiniz</h2>
+                    <h4 class="wow bounceIn animated mt-4 mb-4" data-wow-delay=".50s">Html5 Css3 JS Bootstrap Responsive design</h4>
+                    <h4 class="wow bounceIn animated mb-4" data-wow-delay=".50s">JavaSE Spring Framework Spring MVC -Rest-Data-Secuirty</h4>
+                    <a href="https://www.turkcell.com.tr/?gclid=EAIaIQobChMIj536h8---QIVShoGAB3KBgeREAAYASAAEgI_m_D_BwE&gclsrc=aw.ds"
+                        class="btn btn-warning shadow wow bounceIn animated" data-wow-delay=".50s" target="_blank"><img style="width: 2.2rem;"   th:src="@{/images/logo2.png}" alt="Turkcell" /> Bizi
+                        Takip Edin</a>
+                        <a href="https://www.linkedin.com/in/hamit-m-a569ba129/" class="btn btn-primary shadow wow bounceIn animated"
+                            data-wow-delay=".60s" target="_blank"><i class="fa-brands fa-linkedin" style="margin-right: 5px"></i>
+                            Linkedin</a>
+                        <a href="https://github.com/hamitmizrak" class="btn btn-dark shadow wow bounceIn animated" data-wow-delay=".60s"
+                            target="_blank"><i class="fa-brands fa-github" style="margin-right: 5px"></i>
+                            Github</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- main-start -->
+    <main>
+        <!-- section-10 ends : Icon -->
+        <section id="section10">
+            <div class="icon_message">
+                <h2 class="text-center text-uppercase wow slideInLeft mb-5">Çalışmalarımız</h2>
+                <div class="container wow slideInRight">
+                    <div class="row">
+                        <div class="col-12 col-md-3 col-xl-4 text-center wow bounceInUp animated"
+                        data-wow-duration="1s" data-wow-delay="1.5s">
+                            <i class="fa-brands fa-cc-amazon-pay text-center text-primary"></i>
+                            <h4>E-Ticaret</h4>
+                            <p>E-Ticaret Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, totam?</p>
+                            <div class="col-12 text-center"><button class="btn btn-outline-primary">More ..</button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3 col-xl-4 text-center  wow bounceInDown animated"
+                        data-wow-duration="1s" data-wow-delay="1.7s">
+                            <i class="fa-solid fa-chart-pie text-danger"></i>
+                            <h4>Pie</h4>
+                            <p>Pie dijital card Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, totam?
+                            </p>
+                            <div class="col-12 text-center"><button class="btn btn-outline-primary">More ..</button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3 col-xl-4 text-center  wow bounceInUp animated"
+                        data-wow-duration="1s" data-wow-delay="1.9s">
+                            <i class="fa-solid fa-cubes text-secondary"></i>
+                            <h4>YapBoz</h4>
+                            <p>E-Ticaret Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, totam?</p>
+                            <div class="col-12 text-center"><button class="btn btn-outline-primary">More ..</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section-10 ends : Icon -->
+
+    <!-- section-2 start -->
+    <section id="counter" class="wow slideInLeft  ">
+        <div class="container" style="margin-top: 3rem; margin-bottom: 3rem">
+            <div class="counter-header">
+                <h3>Bizi Yakında Takip Etmek ister misiniz ?</h3>
+                <p>Başarı Counter</p>
+            </div>
+    
+            <div class="row counters">
+                <div class="col-lg-3 col-md-6 mx-auto text-center wow rotateInDownLeft animated"
+                data-wow-duration="1s" data-wow-delay=".7s" >
+                    <i class="fa-regular fa-clock"></i>
+                    <span data-toggle="counter-up" class="wow bounceIn">+36.000</span>
+                    <p class="text-center">Çalışma Saati</p>
+                </div>
+    
+                <div class="col-lg-3 col-md-6 mx-auto text-center wow rotateInDownLeft animated"
+                data-wow-duration="1s" data-wow-delay=".8s">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span data-toggle="counter-up">55</span>
+                    <p class="text-center">Proje</p>
+                </div>
+    
+                <div class="col-lg-3 col-md-6 mx-auto text-center wow rotateInDownLeft animated"
+                data-wow-duration="1s" data-wow-delay=".9s">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span data-toggle="counter-up">1000.000</span>
+                    <p class="text-center">Satır Kod</p>
+                </div>
+    
+                <div class="col-lg-3 col-md-6 mx-auto text-center wow rotateInDownLeft animated"
+                data-wow-duration="1s" data-wow-delay="1s">
+                    <i class="fa-brands fa-buffer"></i>
+                    <span data-toggle="counter-up">100</span>
+                    <p class="text-center">Proje Teslim Edildi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section-2 end -->
+    <!-- section-2 end -->
+
+        <!-- section-1 start : ability -->
+        <section id="ability">
+            <div class="container">
+                <p class="text-uppercase display-6 text-center text-light">Ability</p>
+                <div class="row">
+                    <div class="col-md">
+                        <div class="card  wow rotateInDownLeft animated">
+                            <i class="fa-brands fa-html5 text-center"></i>
+                            <div class="card-body ">
+                                <h4 class="card-title text-uppercase text-center">Html</h4>
+                                <p class="card-text  line_clamp4">Html5 Lorem ipsum dolor sit amet Lorem ipsum dolor sit
+                                    amet.
+                                    consectetur adipisicing elit. Quae, fugiat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md ">
+                        <div class="card wow rotateInDownLeft animated">
+                            <i class="fa-brands fa-css3 text-center text-primary"></i>
+                            <div class="card-body ">
+                                <h4 class="card-title text-uppercase text-center">css3</h4>
+                                <p class="card-text  line_clamp4">Css3 Lorem ipsum dolor sit amet consectetur Lorem
+                                    ipsum dolor
+                                    sit amet. adipisicing elit. Quae, fugiat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md ">
+                        <div class="card wow rotateInDownRight animated" data-wow-duration="1s" data-wow-delay="1s">
+                            <i class="fa-brands fa-js text-center text-warning"></i>
+                            <div class="card-body ">
+                                <h4 class="card-title text-uppercase text-center">Javascript</h4>
+                                <p class="card-text  line_clamp4">JS Lorem ipsum dolor sit amet Lorem ipsum dolor sit
+                                    amet.
+                                    consectetur adipisicing elit. Quae, fugiat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md ">
+                        <div class="card wow rotateInDownRight animated">
+                            <i class="fa-solid fa-j text-center text-success"></i>
+                            <div class="card-body ">
+                                <h4 class="card-title text-uppercase text-center">jquery</h4>
+                                <p class="card-text  line_clamp4">Html5 Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit.
+                                    Quae, fugiat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section-1 end -->
+
+        <!-- parallax scrolling start -->
+        <section class="parallax_class">
+            <div class="container">
+                <div class="row">
+                    <h2 class="text-center text-primary">Parallax Data</h2>
+                    <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae alias ad nam, dolorum praesentium
+                        aspernatur dolores recusandae, animi maiores, natus debitis nesciunt nobis ex molestiae quidem
+                        in nemo ullam doloribus.
+                        Molestias delectus deleniti distinctio eaque consectetur vitae cumque optio. Voluptates ducimus
+                        temporibus optio nam nisi asperiores amet necessitatibus molestias dolores nostrum ab soluta
+                        nihil, eligendi debitis eaque vero facere quia.
+                        Earum doloribus accusantium assumenda ea nobis, laudantium mollitia nihil necessitatibus debitis
+                        est ex minus soluta eos ducimus magni reiciendis suscipit quos provident illo? Eius, tempore
+                        delectus temporibus doloremque impedit fuga.</p>
+                    <div class="col-12 text-center"><button class="btn btn-outline-primary">More ...</button></div>
+                </div>
+            </div>
+        </section>
+        <!-- parallax scrolling start -->
+
+        <!-- section-3 start : NewsPaper -->
+        <section id="section_3" >
+            <div class="container">
+                <div class="row">
+                    <h2 class="text-uppercase display-6 text-center wow rotateInDownLeft animated mb-4" data-wow-delay=".40">
+                        NewsPaper</h2>
+                    <p id="newspaper_id" class=" wow rotateInDownRight animated" data-wow-delay=".40">
+                        Yeni haber Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit magnam laudantium
+                        iure
+                        maiores nam cum, asperiores dolores autem deserunt molestiae placeat inventore vitae voluptate. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste voluptates hic ducimus neque accusantium facilis. Aliquam maxime hic nobis quas dolore fuga nemo mollitia quia, alias est dolorem reprehenderit voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, consectetur nisi culpa sed doloremque quia cumque aspernatur eius tempora voluptatibus placeat officiis suscipit quo aperiam, consequuntur impedit ducimus. Unde, mollitia?
+                        Dolor accusantium optio sit laudantium quasi consequatur a, dolorem fugit alias numquam accusamus culpa earum eaque illo consequuntur ratione mollitia tempora, fugiat, eveniet animi quia eius unde. Velit, eum modi.
+                    
+                    </p>
+                    <div class="col-md-5"></div>
+                    <div class="col-md-4">
+                        <a href="" class="btn btn-outline-warning text-center btn-sm wow rotateInDownLeft animated"
+                            data-wow-delay=".80">Read me ..</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section-3 end -->
+
+        <!-- section-2 start -->
+        <section id="section_2" class="wow bounceInRight animated"
+        data-wow-duration="1s" data-wow-delay=".5s">
+            <div class="container">
+                <div class="row">
+                    <h2 class="text-uppercase display-6 text-center wow rotateInDownLeft animated mb-4" data-wow-delay=".40">
+                        Blog</h2>
+
+                    <div class="col-md-3 wow bounceInRight animated"
+                    data-wow-duration="1s" data-wow-delay=".5s" >
+                        <div class="card">
+                            <img class="card-img-top"     th:src="@{/images/resim1.jpg}"   alt="Title">
+                            <div class="card-body">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur elit.Doloremque cupiditate,
+                                    nemo itaque, aut reprehenderit repellendus quasi nesciunt velit molestiae possimus
+                                    quo. Dolores
+                                    perferendis a omnis dignissimos dolore praesentium doloremque repellat?
+                                    Tempora quasi similique corporis, accusamus officia voluptatem incidunt consequatur
+                                    enim ab
+                                    facere ea, vitae sapiente molestias ipsam totam aut consequuntur esse optio! Amet
+                                    sapiente
+                                    minima aspernatur, eveniet ex delectus nisi.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 wow bounceInRight animated"
+                    data-wow-duration="1s" data-wow-delay=".6s">
+                        <div class="card">
+                            <img class="card-img-top"  th:src="@{/images/office-gc2455a673_1920.jpg}"   alt="Title">
+                            <div class="card-body">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur elit.Doloremque cupiditate,
+                                    nemo itaque, aut reprehenderit repellendus quasi nesciunt velit molestiae possimus
+                                    quo. Dolores
+                                    perferendis a omnis dignissimos dolore praesentium doloremque repellat?
+                                    Tempora quasi similique corporis, accusamus officia voluptatem incidunt consequatur
+                                    enim ab
+                                    facere ea, vitae sapiente molestias ipsam totam aut consequuntur esse optio! Amet
+                                    sapiente
+                                    minima aspernatur, eveniet ex delectus </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3  wow bounceInRight animated"
+                    data-wow-duration="1s" data-wow-delay=".7s">
+                        <div class="card">
+                            <img class="card-img-top"    th:src="@{/images/meeting-g9a3aff941_1920.jpg}"   alt="Title">
+                            <div class="card-body">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur elit.Doloremque cupiditate,
+                                    nemo itaque, aut reprehenderit repellendus quasi nesciunt velit molestiae possimus
+                                    quo. Dolores
+                                    perferendis a omnis dignissimos dolore praesentium doloremque repellat?
+                                    Tempora quasi similique corporis, accusamus officia voluptatem incidunt consequatur
+                                    enim ab
+                                    facere ea, vitae sapiente molestias ipsam totam aut consequuntur esse optio! Amet
+                                    sapiente
+                                    minima aspernatur, eveniet ex delectus </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3  wow bounceInRight animated"
+                    data-wow-duration="1s" data-wow-delay=".8s">
+                        <div class="card">
+                            <img class="card-img-top"   th:src="@{/images/resim1.jpg}"  alt="Title">
+                            <div class="card-body">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur elit.Doloremque cupiditate,
+                                    nemo itaque, aut reprehenderit repellendus quasi nesciunt velit molestiae possimus
+                                    quo. Dolores
+                                    perferendis a omnis dignissimos dolore praesentium doloremque repellat?
+                                    Tempora quasi similique corporis, accusamus officia voluptatem incidunt consequatur
+                                    enim ab
+                                    facere ea, vitae sapiente molestias ipsam totam aut consequuntur esse optio! Amet
+                                    sapiente
+                                    minima aspernatur, eveniet ex delectus </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 wow bounceInRight animated"
+                    data-wow-duration="1s" data-wow-delay=".9s">
+                        <div class="card">
+                            <img class="card-img-top"    th:src="@{/images/resim1.jpg}" alt="Title">
+                            <div class="card-body">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur elit.Doloremque cupiditate,
+                                    nemo itaque, aut reprehenderit repellendus quasi nesciunt velit molestiae possimus
+                                    quo. Dolores
+                                    perferendis a omnis dignissimos dolore praesentium doloremque repellat?
+                                    Tempora quasi similique corporis, accusamus officia voluptatem incidunt consequatur
+                                    enim ab
+                                    facere ea, vitae sapiente molestias ipsam totam aut consequuntur esse optio! Amet
+                                    sapiente
+                                    minima aspernatur, eveniet ex delectus </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 wow bounceInRight animated"
+                    data-wow-duration="1s" data-wow-delay="1s">
+                        <div class="card">
+                            <img class="card-img-top"   th:src="@{/images/office-gc2455a673_1920.jpg}"  alt="Title">
+                            <div class="card-body">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur elit.Doloremque cupiditate,
+                                    nemo itaque, aut reprehenderit repellendus quasi nesciunt velit molestiae possimus
+                                    quo. Dolores
+                                    perferendis a omnis dignissimos dolore praesentium doloremque repellat?
+                                    Tempora quasi similique corporis, accusamus officia voluptatem incidunt consequatur
+                                    enim ab
+                                    facere ea, vitae sapiente molestias ipsam totam aut consequuntur esse optio! Amet
+                                    sapiente
+                                    minima aspernatur, eveniet ex delectus </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 wow bounceInRight animated"
+                    data-wow-duration="1s" data-wow-delay="1.2s">
+                        <div class="card">
+                            <img class="card-img-top"   th:src="@{/images/meeting-g9a3aff941_1920.jpg}"   alt="Title">
+                            <div class="card-body">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur elit.Doloremque cupiditate,
+                                    nemo itaque, aut reprehenderit repellendus quasi nesciunt velit molestiae possimus
+                                    quo. Dolores
+                                    perferendis a omnis dignissimos dolore praesentium doloremque repellat?
+                                    Tempora quasi similique corporis, accusamus officia voluptatem incidunt consequatur
+                                    enim ab
+                                    facere ea, vitae sapiente molestias ipsam totam aut consequuntur esse optio! Amet
+                                    sapiente
+                                    minima aspernatur, eveniet ex delectus </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3  wow bounceInRight animated"
+                    data-wow-duration="1s" data-wow-delay="1.5s">
+                        <div class="card">
+                            <img class="card-img-top"    th:src="@{/images/transparent.jpg}"   alt="Title">
+                            <div class="card-body">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur elit.Doloremque cupiditate,
+                                    nemo
+                                    itaque, aut reprehenderit repellendus quasi nesciunt velit molestiae possimus quo.
+                                    Dolores perferendis a
+                                    omnis dignissimos dolore praesentium doloremque repellat?
+                                    Tempora quasi similique corporis, accusamus officia voluptatem incidunt consequatur
+                                    enim ab facere ea,
+                                    vitae sapiente molestias ipsam totam aut consequuntur esse optio! Amet sapiente
+                                    minima aspernatur,
+                                    eveniet ex delectus </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- section-2 end -->
+
+                <!-- section-7 start -->
+                <section id="section_7"  class="wow rotateInUpRight animated"
+                data-wow-duration="1s" data-wow-delay=".7s">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span>About Me</span>
+                                <h4>Computer Sience <em>Frontend</em></h4>
+                                <p> <em style="color: #f5a425; background-color:rgb(0, 0, 0);padding: .2rem;"> my ability
+                                        technology</em>
+                                    html5, css3, js, jqyuery, bootstrap, react, angular, Java, JavaSE, Spring, Springmvc ,
+                                    Spring Data, Spring Security, Jsp, Jsf, Mysql, MariaDb, Hibernates, H2DB, Primeface,
+                                    Servlet, Hibernate, Rest, Microservices,
+                                    Docker, Kubernates,Ansible Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt
+                                    vero nihil explicabo ipsum, recusandae quisquam iure, suscipit voluptate debitis quia
+                                    placeat doloribus maiores quasi error sapiente repellat, possimus officia adipisci!
+                                    Nulla, vitae! Amet maiores quo, eius porro qui doloremque a? Ut velit facilis illo eligendi
+                                    consequuntur! Consequuntur rerum ipsa accusantium architecto, animi magni beatae optio
+                                    perspiciatis, velit libero, voluptatum quae! <a rel="nofollow" href="https://"
+                                        target="_parent">GitHub</a>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>My Profiles</h4>
+                                <a href="https://www.youtube.com">
+                                    <img class="w-100"   th:src="@{/images/transparent.jpg}" ></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- section-7 start -->
+
+        <!-- section-6 start -->
+        <!-- contact -->
+        <section id="section_6" class="wow bounceInLeft animated"
+        data-wow-duration="1s" data-wow-delay=".5s">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-center text-uppercase text-light">Contact</h2>
+                    </div>
+                    <div class="col-md-6" id="contact_left">
+                        <form action="#!" id="contact_form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="adınız" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="soyadınız" class="form-control">
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="email" placeholder="deneme@xyz.com" class="form-control">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="number" placeholder="numaranız" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <textarea name="message" rows="6" class="form-control" id="message"
+                                            placeholder="Your message..." required=""></textarea>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <button type="reset" class="btn btn-danger">Clear </button>
+                                        <button type="submit" class="btn btn-primary">Send Message </button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6" id="contact_left">
+                        <div id="map">
+                            <iframe
+                                src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                width="100%" height="420px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section-6 start -->
+
+    </main>
+    <!-- main-end -->
+
+
+    <!-- footer-start -->
+    <footer class="text-center text-lg-start">
+        <!-- footer-tab-1 start -->
+        <section id="section_footer_1" class="p-4 border-top d-flex justify-content-center justify-content-lg-between">
+            <div class="me-5 d-none d-lg-block">
+                <span>One pages</span>
+            </div>
+
+            <!-- social -->
+            <div id="social_id">
+                <a href="#!" class="me-1 btn btn-outline-primary text-reset btn-floating">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="#!" class="me-1 btn btn-outline-warning text-reset btn-floating">
+                    <i class="fa-brands fa-instagram-square"></i>
+                </a>
+                <a href="#!" class="me-1 btn btn-outline-success text-reset btn-floating">
+                    <i class="fa-brands fa-telegram"></i>
+                </a> <a href="#!" class="me-1 btn btn-outline-info text-reset btn-floating">
+                    <i class="fa-brands fa-google"></i>
+                </a> <a href="#!" class="me-1 btn btn-outline-danger text-reset btn-floating">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </section>
+        <!-- footer-tab-1 end -->
+
+        <!-- footer-tab-2 start -->
+        <section id="section_footer_2">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-4">
+                    <!-- medium device:4 
+                    large device :3
+                    xlarge device :4 -->
+
+                    <!-- left-1 -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-5 shadow">
+                        <h6 class="text-uppercase mb-4">
+                            <i style="font-size:2rem; margin-right:.3rem;" class="fa-brands fa-avianex"></i> Company
+                            INC.
+                        </h6>
+                        <p style="text-align:left!important" class="line_clamp3">
+                            E-Ticaret Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia veniam rerum ab
+                            explicabo temporibus tempora! Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+                            sit molestiae et veritatis voluptates iure.
+                        </p>
+                    </div>
+
+                    <!-- left-2 -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-5 shadow44">
+                        <h6 class="text-uppercase mb-3">FrontEnd</h6>
+                        <p><a href="" class="text-reset">Html5</a></p>
+                        <p><a href="" class="text-reset">CSS3</a></p>
+                        <p><a href="" class="text-reset">JS</a></p>
+                    </div>
+
+                    <!-- left-3 -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-5 shadow44">
+                        <h6 class="text-uppercase mb-3">Backend</h6>
+                        <p><a href="" class="text-reset">Node JS</a></p>
+                        <p><a href="" class="text-reset">Java</a></p>
+                        <p><a href="" class="text-reset">C#</a></p>
+                    </div>
+
+                    <!-- left-4 -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-5 shadow" id="address_id">
+                        <h6 class="text-uppercase mb-3">Contact</h6>
+                        <p><i class="fa-solid fa-earth-africa"></i> Turkey</p>
+                        <p><i class="fa-solid fa-envelope-open-text"></i>
+                            <a href="mailto:hamitmizrak@gmail.com">hamitmizrak@gmail.com</a>
+                        </p>
+                        <p><i class="fa-solid fa-mobile-retro"></i>
+                            <a href="tel:90111223344">90 111 22 33 44</a>
+                        </p>
+                        <p><i class="fa-solid fa-mobile-retro"></i>
+                            <a href="tel:90111223344">90 111 22 33 44</a>
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button onclick="date()" class="btn btn-outline-danger">Date</button>
+                            <span id="date_id"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- footer-tab-2 end -->
+
+        <!-- CopyRight -->
+        <div class="text-center p-5 bg-dark" id="copy_right">
+            &copy; 2022 Bütün Haklar Saklıdır
+            <a href="https://www.hamitmizrak.com.tr" class="">Hamit Mızrak</a>
+        </div>
+    </footer>
+    <!-- footer-end -->
+
+<!-- BACK TO TOP START -->
+<a id="back_top" href="#header" class="btn btn-sm btn-primary">
+    <i class="fa-solid fa-arrow-up-long text-light"></i>
+</a>
+<!-- BACK TO TOP END -->
+
+
+<!-- Counter JS -->
+<!-- Waypoints JavaScript Libraries -->
+<script th:src="@{/js/waypoints.min.js}"></script>
+<script th:src="@{/js/counterup.min.js}"></script>
+
+
+    <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
+    <!-- External JS -->
+    <script th:src="@{/js/index.js}"></script>
 </body>
+
 </html>

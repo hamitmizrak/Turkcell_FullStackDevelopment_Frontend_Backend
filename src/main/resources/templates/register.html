@@ -34,11 +34,9 @@
     <link rel="stylesheet"   th:href="@{/css/index.css}">
     <script th:src="@{/js/index.js}"></script>
 </head>
-
 <body>
 
 <!-- start codes -->
-
 <div class="container">
     <div class="row">
         <div class="col-md-6  col-md-offset--3">
@@ -54,22 +52,22 @@
             <div th:if="${param.logout}">
                 <div class="alert alert-dark alert-dismissible fade show" role="alert">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <strong>Çıkış</strong> Çıkış yapıldı
+                    <strong th:text="#{register.success}"></strong>
                 </div>
             </div>
 
-            <h1>Kayıt Ol Sayfası</h1>
+            <h1 th:text="#{register.signuppage}" ></h1>
             <form th:action="@{/user/register}" th:method="post" th:object="${user}"  ><!--target="_blank"-->
                 <div class="form-group mt-3 mb-3">
                     <!-- Dikkat: label for input id arar. -->
-                    <label class="control-label" for="name">Adınız</label>
+                    <label th:text="#{register.name}" class="control-label" for="name"></label>
                     <input type="text" class="form-control" id="name"  name="name" placeholder="Adınızı giriniz"  autofocus="true" th:field="*{name}"/>
                     <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger">
                 </div>
 
                 <div class="form-group mt-3 mb-3">
                     <!-- Dikkat: label for input id arar. -->
-                    <label class="control-label" for="surname">Soyadınız</label>
+                    <label th:text="#{register.surname}" class="control-label" for="surname"></label>
                     <input type="text" class="form-control" id="surname"  name="surname" placeholder="Soyadınız giriniz"   th:field="*{surname}"/>
                     <div th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}" class="text-danger">
                 </div>
@@ -77,14 +75,14 @@
 
                 <div class="form-group mt-3 mb-3">
                     <!-- Dikkat: label for input id arar. -->
-                    <label class="control-label" for="email">Email </label>
+                    <label  th:text="#{register.email}" class="control-label" for="email"> </label>
                     <input type="text" class="form-control" id="email"  name="email" placeholder="Email adresinizi giriniz"   th:field="*{email}"/>
                     <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger">
                 </div>
 
                 <div class="form-group mt-3 mb-3">
                     <!-- Dikkat: label for input id arar. -->
-                    <label class="control-label" for="password">Şifre </label>
+                    <label th:text="#{register.password}" class="control-label" for="password"></label>
                     <input type="password" class="form-control" id="password"  name="password" placeholder="Şifrenizi adresinizi giriniz"   th:field="*{password}"/>
                     <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-danger">
                 </div>
@@ -92,7 +90,7 @@
                 <div class="form-group mt-3 mb-3">
                     <div class="row">
                         <div class="col-md-6">
-                            <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+                            <button th:text="#{register}" type="submit" class="btn btn-primary"></button>
                             
                         </div>
                     </div>
@@ -100,12 +98,11 @@
             </form>
 
             <div class="form-group mb-2">
-                <span><a th:href="@{/login}">Üye Giriş Sayfası</a> </span>
+                <span><a th:text="#{login}" th:href="@{/login}">Üye Giriş Sayfası</a> </span>
             </div>
         </div>
     </div>
 </div>
-
 
 <!-- ends codes -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
