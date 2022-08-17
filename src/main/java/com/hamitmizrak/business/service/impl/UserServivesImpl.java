@@ -47,7 +47,7 @@ public class UserServivesImpl implements IUserServices {
 
     //Kullanıcıyı Database kaydetmek
     @Override
-    public UserRegisterEntity saveUserRegister(UserRegisterDto dto) {
+    public UserRegisterDto saveUserRegister(UserRegisterDto dto) {
         //RolesRegisterEntity
         List<RoleRegisterEntity> roleRegisterEntityList=new ArrayList<>();
         roleRegisterEntityList.add(new RoleRegisterEntity("ROLES_USER"));
@@ -59,7 +59,8 @@ public class UserServivesImpl implements IUserServices {
                 .password(passwordEncoderBean.passwordEncoderMethod().encode(dto.getPassword()))
                 .relationRoleRegisterEntities(roleRegisterEntityList)
                 .build();
-        return repository.save(userRegisterEntity);
+        repository.save(userRegisterEntity);
+        return dto;
     }
 
 
@@ -72,7 +73,7 @@ public class UserServivesImpl implements IUserServices {
 
         //sistemde bir kullanıcı yoksa
         if(userRegisterEntity==null){
-            throw new UsernameNotFoundException("Geçersiz Kullanıcı emaili  veya Şifresini yanlış girdiniz");
+            throw new UsernameNotFoundException("Geçersiz Kullanıcı emaili  veya Şifreyi yanlış girdiniz");
         }
 
         //roleAuthories

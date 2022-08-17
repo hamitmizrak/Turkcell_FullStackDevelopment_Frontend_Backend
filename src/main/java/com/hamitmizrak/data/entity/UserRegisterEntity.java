@@ -22,6 +22,7 @@ public class UserRegisterEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="user_register_id")
     private Long userRegisterId;
+
     private String name;
     private String surname;
 
@@ -36,7 +37,7 @@ public class UserRegisterEntity implements Serializable {
     private Date createdDate;
 
     //Relation : Register burası Eager
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     //burarada UserRegisterEntity ve RoleRegisterEntity id bağlama işlemini yaptım
     //inverseJoinColumns ==> karşımızdaki RoleRegisterEntity @Column name verdik
     @JoinTable(joinColumns =@JoinColumn(name="user_register_id") ,inverseJoinColumns = @JoinColumn(name="roles_id"))

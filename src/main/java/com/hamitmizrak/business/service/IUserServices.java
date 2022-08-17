@@ -8,5 +8,5 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 public interface IUserServices  extends UserDetailsService {
 
     //register için kaydetmekl
-    UserRegisterEntity saveUserRegister(UserRegisterDto userRegisterDto);
+    UserRegisterDto saveUserRegister(UserRegisterDto userRegisterDto);
 }
