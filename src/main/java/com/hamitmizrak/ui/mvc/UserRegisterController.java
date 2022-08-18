@@ -54,11 +54,31 @@ public class UserRegisterController {
     // http://localhost:8080/login
     @GetMapping("/login")
     public String loginPage(){
-        return "login";
+        Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
+        System.out.println("ADI:"+authentication.getPrincipal());
+        System.out.println(authentication.getPrincipal());
+        System.out.println(authentication.getCredentials());
+        System.out.println(authentication.getAuthorities());
+        System.out.println(authentication.getDetails());
+
+ if(authentication.getPrincipal() == "anonymousUser"){
+     System.out.println("Kullanıcı yok ");
+     return "login";
+ }else{
+     System.out.println("Kullanıcı var ");
+
+ }
+
+        return "redirect:/admin?success";
     }
 
     @GetMapping("/admin")
     public String adminPage(){
+        Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
+        System.out.println(authentication.getPrincipal());
+        System.out.println(authentication.getCredentials());
+        System.out.println(authentication.getAuthorities());
+        System.out.println(authentication.getDetails());
         return "/admin/index";
     }
 
@@ -67,7 +87,14 @@ public class UserRegisterController {
         //email ve şifre varsa
         if(repository.findByEmailAndPassword(userRegisterEntity.getEmail(),userRegisterEntity.getPassword()) !=null){
         }
+
 //        Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//        Giriş yapan kullanıcının kullanıcı adını : getPrincipal()
+//        Kimliği doğrulanmış kullanıcının şifresini : getCredentials()
+//        Kimliği doğrulanmış kullanıcının atanmış rollerini alın: getAuthorities()
+//        Kimliği doğrulanmış kullanıcının diğer ayrıntılarını alın: getDetails()
+
 //        if(authentication!=null){
 //            return "login";
 //        }

@@ -60,7 +60,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                // .tokenValiditySeconds(31104000)
                 .tokenValiditySeconds(1*60*60*24*30*12) //1 YIL
                 .tokenRepository(persistentTokenRepositoryBean.persistentTokenRepositoryBeanMethod())
-                .userDetailsService(userDetailsService);
+                .userDetailsService(userDetailsService);;
     }
 
     //Ben olusturdum.
