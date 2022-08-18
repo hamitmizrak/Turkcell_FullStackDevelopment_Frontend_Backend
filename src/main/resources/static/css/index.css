@@ -93,11 +93,11 @@ p {
 }
 
 #navbar_id ul > li > a {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 
 #navbar_id ul > li > a > i {
-  margin-right: 0.5rem;
+  margin-right: 0.4rem;
   font-size: 0.8rem;
   color: chartreuse;
 }
@@ -105,6 +105,27 @@ p {
 #right_navbar > button,
 a {
   font-size: 0.8rem;
+}
+
+
+/* search*/
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 6px 10px 6px 20px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
 }
 
 /* ############################################################################ */
@@ -352,9 +373,7 @@ footer {
     color: black;
   }
 
-  #navbar_id {
-    max-width: 100%;
-  }
+
 
   #header h2,
   h4 {

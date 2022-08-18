@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
 
+//Dikkat: Buraya yazdığınız Bean mutlaka biryerde kullanın
 @Configuration
 public class AuditorAwareBean  {
 

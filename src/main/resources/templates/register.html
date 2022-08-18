@@ -64,12 +64,14 @@
                     <input type="text" class="form-control" id="name"  name="name" placeholder="Adınızı giriniz"  autofocus="true" th:field="*{name}"/>
                     <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger">
                 </div>
+                </div>
 
                 <div class="form-group mt-3 mb-3">
                     <!-- Dikkat: label for input id arar. -->
                     <label th:text="#{register.surname}" class="control-label" for="surname"></label>
                     <input type="text" class="form-control" id="surname"  name="surname" placeholder="Soyadınız giriniz"   th:field="*{surname}"/>
                     <div th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}" class="text-danger">
+                </div>
                 </div>
 
 
@@ -79,12 +81,14 @@
                     <input type="text" class="form-control" id="email"  name="email" placeholder="Email adresinizi giriniz"   th:field="*{email}"/>
                     <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger">
                 </div>
+                </div>
 
                 <div class="form-group mt-3 mb-3">
                     <!-- Dikkat: label for input id arar. -->
                     <label th:text="#{register.password}" class="control-label" for="password"></label>
                     <input type="password" class="form-control" id="password"  name="password" placeholder="Şifrenizi adresinizi giriniz"   th:field="*{password}"/>
                     <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-danger">
+                </div>
                 </div>
 
                 <div class="form-group mt-3 mb-3">
@@ -98,11 +102,11 @@
             </form>
 
             <div class="form-group mb-2">
-                <span><a th:text="#{login}" th:href="@{/login}">Üye Giriş Sayfası</a> </span>
+                <span><a th:text="#{login.page=}" th:href="@{/login}"></a> </span>
             </div>
         </div>
-    </div>
-</div>
+        </div>
+        </div>
 
 <!-- ends codes -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

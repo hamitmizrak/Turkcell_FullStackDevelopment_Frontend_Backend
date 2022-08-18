@@ -57,13 +57,13 @@ public class UserRegisterController {
         return "login";
     }
 
-    @GetMapping("/secret")
+    @GetMapping("/admin")
     public String adminPage(){
-        return "login_page";
+        return "/admin/index";
     }
 
     @GetMapping("/login-user")
-    public String loginUser(UserRegisterEntity userRegisterEntity, HttpServletRequest request){
+    public String loginUser(UserRegisterEntity userRegisterEntity, HttpServletRequest request, HttpServletResponse response){
         //email ve şifre varsa
         if(repository.findByEmailAndPassword(userRegisterEntity.getEmail(),userRegisterEntity.getPassword()) !=null){
         }
@@ -75,30 +75,8 @@ public class UserRegisterController {
 //        if(session!=null){
 //            return "login_page";
 //        }
-        return "login_page";
+        return "index";
     }
-
-
-    // login
-    // http://localhost:8080/login
-   // @GetMapping("/login")
-    //public String loginPage(HttpServletRequest request, HttpServletResponse response){
-//        Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
-//        if(authentication!=null){
-//            return "login";
-//        }
-//        HttpSession session=request.getSession();
-//        if(session!=null){
-//            return "login_page";
-//        }
-      //  return "login";
-    //}
-
-
-
-
-
-
 
     // #####################################################
     //register ==> GetMapping

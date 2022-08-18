@@ -5,6 +5,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+//Dikkat: Buraya yazdığınız Bean mutlaka biryerde kullanın
+
 @Configuration
 public class ModelMapperBean {
 
