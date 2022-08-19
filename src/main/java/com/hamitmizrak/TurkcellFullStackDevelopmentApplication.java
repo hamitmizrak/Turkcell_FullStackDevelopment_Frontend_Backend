@@ -1,5 +1,7 @@
 package com.hamitmizrak;
 
+import com.hamitmizrak.ui.mvc.ContactController;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
@@ -26,6 +28,7 @@ public class TurkcellFullStackDevelopmentApplication {
         //Main Running
         SpringApplication.run(TurkcellFullStackDevelopmentApplication.class, args);
     }
+
 
     // @Bean yazma yeri
 }

@@ -44,6 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .antMatchers("/","/index").permitAll()
                     .antMatchers("/static/**","/css/**","/js/**","/images/**").permitAll()
                     .antMatchers("/user/register").permitAll()
+                   // .antMatchers("/send/mimemail","/send/simplemail").permitAll()
                     .anyRequest().authenticated()
                 .and()
                    // .formLogin().loginPage("/login").permitAll()
